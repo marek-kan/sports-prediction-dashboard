@@ -13,7 +13,7 @@ This repository powers a public-facing **day-ahead prediction dashboard** for **
 ## Motivation
 
 This project started as a curiosity: can a well-engineered machine learning system match or outperform market closing lines using only on-court performance data?  
-It’s primarily a learning and research playground focused on time-series modeling, feature engineering, and execution strategy optimization — wrapped in a transparent, versioned prediction system that anyone can evaluate over time.
+It’s primarily a learning and research playground focused on time-series modeling, feature engineering, and execution strategy optimization, wrapped in a transparent, versioned prediction system that anyone can evaluate over time.
 
 ## Technical Stack
 
@@ -32,16 +32,9 @@ Majority of the solution is hidden in private repositories at this time. If the 
 - Results added the following day
 
 
-## How this repo works
-
-- All public artifacts live under `docs/` (GitHub Pages deploys that folder).
-- You drop daily prediction JSONs into `docs/data/predictions/` and results JSONs into `docs/data/results/`.
-- A CI job (`pages.yml`) builds manifests and metrics (accuracy, Brier, calibration) and deploys.
-- No logos or trademarks are included. Team names are plain text.
-
 ## Data conventions
 
-One JSON object per file (filename: `{YYYY-MM-DD}_{HOME}_{AWAY}.json`), e.g. `2024-10-30_UTA_LAL.json`
+One JSON object per prediction/result (filename: `{YYYY-MM-DD}_{HOME}_{AWAY}.json`), e.g. `2024-10-30_UTA_LAL.json`
 
 **Predictions** : `docs/data/{league}/predictions`, under the key "preds" are probability predictions for various events.
 ```json
