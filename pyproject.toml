@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "prediction-dashboard"
+version = "0.1.0"
+description = ""
+authors = ["Marek Kancir <kancir.marek@gmail.com>"]
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.13"
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^3.5.0"
+tqdm = "^4.66.1"
+matplotlib = "^3.7.1"
+ipykernel = "^6.22.0"
+pandas = "^2.0.1"
+jsonschema = "^4.25.1"
+
+[tool.black]
+line-length = 125
+include = '\.pyi?$'
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+line_length = 125
+include_trailing_comma = true
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
