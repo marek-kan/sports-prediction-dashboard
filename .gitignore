@@ -20,6 +20,8 @@ env/
 ENV/
 .conda/
 .python-version
+poetry.lock
+pyproject.toml
 
 # Tests / coverage
 .pytest_cache/
