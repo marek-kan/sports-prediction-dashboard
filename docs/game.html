@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Game Detail</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <!-- <meta name="robots" content="noindex"> -->
+</head>
+<body>
+  
+  <div class="navbar">
+    <a href="index.html">Dashboard</a>
+    <a href="about.html">About</a>
+  </div>
+
+  <header class="container">
+    <h1 id="title">Game</h1>
+    <p class="subtitle" id="subtitle">Loading…</p>
+  </header>
+
+  <main class="container">
+    <section class="card" id="result-box" style="display:none; margin-bottom:8px;" >
+      <h2>Final result</h2>
+      <p id="result-line"></p>
+    </section>
+
+    <section class="card">
+      <h2>Win Probabilities</h2>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Market</th><th>Home</th><th>Draw</th><th>Away</th></tr></thead>
+          <tbody id="winprobs">
+            <tr><td>Full-time (FT)</td><td id="ft-home">-</td><td id="ft-draw">-</td><td id="ft-away">-</td></tr>
+            <tr><td>Regulation (RT)</td><td id="rt-home">-</td><td id="rt-draw">-</td><td id="rt-away">-</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="margin-top:8px">
+        <span class="badge">μ Home: <span id="mu-home">-</span></span>
+        <span class="badge">μ Away: <span id="mu-away">-</span></span>
+        <span class="badge">σ Home: <span id="sd-home">-</span></span>
+        <span class="badge">σ Away: <span id="sd-away">-</span></span>
+      </div>
+    </section>
+
+    <section>
+      <div class="cards">
+        <div class="card">
+          <h2>Handicap ladder (home perspective)</h2>
+          <div class="table-wrapper">
+            <table id="hcp-table">
+              <thead><tr><th>HCP</th><th>P(home covers)</th></tr></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card">
+          <h2>Totals ladder (over perspective)</h2>
+          <div class="table-wrapper">
+            <table id="ou-table">
+              <thead><tr><th>Total</th><th>P(Over)</th></tr></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="container footer">
+    <small>© <span id="year"></span></small>
+  </footer>
+
+  <script src="assets/game.js"></script>
+  <script src="assets/navbar.js"></script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta property="og:type" content="website">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+  <div class="navbar">
+    <a href="index.html">Dashboard</a>
+    <a href="about.html">About</a>
+  </div>
+
+  <header class="container">
+    <h1>About this dashboard</h1>
+    <p class="subtitle">High-level methodology, versioning and disclaimers.</p>
+    <p class="meta">
+      Version: <code>2025.10.0</code> · Last model update: <code>2025-10-07</code>
+    </p>
+  </header>
+
+  <main class="container">
+    <section>
+      <h2>TL;DR</h2>
+      <ul>
+        <li><b>What:</b> Day-ahead probabilities for NHL & NBA markets (moneyline, totals, asian handicaps).</li>
+        <li><b>Why:</b> To learn, showcase my engineering & ML craft, stress-test a production-grade sports modeling pipeline.</li>
+        <li><b>How:</b> Time-series ML + strict MLOps.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>What does "day-ahead" mean?</h2>
+      <ul>
+        <li><b>Data Cutoff:</b> I will try to publish predictions one day before actual game day. I try to protect my edge with this setup.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Motivation</h2>
+      <p>
+        This project started as a curiosity: can a well-engineered machine learning system 
+        consistently match or outperform market closing lines using only on-court performance data? 
+        The general consensus is that this is extremely difficult, and because backtests 
+        often rely on simplifying assumptions, any claim of edge must be treated probabilistically.
+      </p>
+      <p>
+        My primary goal is to learn and explore: time-series modeling, feature engineering, 
+        and execution strategy optimization under realistic constraints. 
+        This dashboard acts as a transparent, versioned prediction system 
+        where anyone can evaluate model quality over time.
+      </p>
+    </section>
+
+    <section>
+      <h2>Methodology (High-level)</h2>
+      <p>I avoid leaking exact features. Below is the shape of the system.</p>
+      <ul>
+        <li><b>Targets:</b> Home/away team scoring distributions. Market probabilities (moneyline, totals, spread/puck line) are derived from these distributions.</li>
+        <li><b>Feature families (not specifics):</b>
+          <ul>
+            <li>Team form, schedule density, pace/tempo, box-scores, play-by-play data.</li>
+            <li>Lagged scores, various rolling averages (time-aware).</li>
+            <li>No market data used.</li>
+          </ul>
+        </li>
+        <li><b>Modeling:</b> Fast kernel approximation into richer non-linear space, to capture interactions and smoothness. Then I use classical machine learning estimators.</li>
+        <li><b>Validation:</b> Walk-forward cross-validation with strict leaks checks and time safe joins.</li>
+      </ul>
+
+      <h3>Versioning & data</h3>
+      <ul>
+        <li>One JSON per game in <code>docs/data/predictions/</code> named <code>YYYY-MM-DD_HOME_AWAY.json</code>.</li>
+        <li>Matching results JSON per game in <code>docs/data/results/</code>. Published post-match, usually, day after the match is played.</li>
+        <li>CI builds manifests and aggregated metrics on deploy.</li>
+      </ul>
+
+      <h3>Simplistic Flow-chart</h3>
+      <pre class="mermaid">
+  A[Daily ETL] --> B[Feature Build]
+  B --> C[PostgreSQL Storage]
+  C --> D[Model Predict (day-ahead)]
+  D --> E[Post-Processing]
+  E --> F[Artifacts: JSON, charts, etc.]
+  F --> G[Publish new page version]
+      </pre>
+      <noscript><code>A→B→C→D→E→F→G (see source for Mermaid diagram)</code></noscript>
+    </section>
+
+    <section>
+      <h2>Data access & use</h2>
+      <ul>
+        <li>All JSONs that power this site live in the repository and are versioned. If you want the data, please
+          <strong>clone or pull the repo</strong> rather than scraping this site.</li>
+        <li>Paths: <code>docs/data/predictions/</code> and <code>docs/data/results/</code>. CI publishes/updates them on deploy.</li>
+        <li><strong>Polite use policy:</strong> no scraping, crawling or hot-linking of JSON endpoints. If you need programmatic access,
+          sync the repo locally or vendor the files.</li>
+        <li><strong>License:</strong> data is provided under <code>CC BY-NC 4.0</code> (non-commercial); contact for commercial use.</li>
+      </ul>
+      <p class="note">Why? Scrapers add load and can break consumers when structure changes; git history is stable, verifiable, and bandwidth-friendly.</p>
+    </section>
+
+    <section>
+      <h2>Disclaimers</h2>
+      <p>This site is for informational and entertainment purposes only. It is <strong>not</strong> investment or betting advice.</p>
+    </section>
+
+    <section>
+      <h2>Follow & updates</h2>
+      <p>Release notes and model changes are announced here:</p>
+      <ul class="social">
+        <li>GitHub: <a href="https://github.com/marek-kan/yourrepo" target="_blank" rel="noopener">marek-kan/public-prediction-dashboard</a></li>
+        <li>𝕏: <a href="https://x.com/AlwaysWrongish" target="_blank" rel="noopener">@AlwaysWrongish</a></li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="container footer">
+    <small>© <span id="year"></span></small>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+  <script src="assets/navbar.js"></script>
+</body>
+</html>

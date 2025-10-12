@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "NBA Result",
+  "type": "object",
+  "required": [
+    "match_id"
+  ],
+  "oneOf": [
+    {
+      "required": [
+        "home_score",
+        "away_score"
+      ]
+    },
+    {
+      "required": [
+        "home_team",
+        "away_team"
+      ]
+    }
+  ],
+  "properties": {
+    "match_id": {
+      "type": "string"
+    },
+    "home_score": {
+      "type": "number"
+    },
+    "away_score": {
+      "type": "number"
+    },
+    "home_team": {
+      "type": "number"
+    },
+    "away_team": {
+      "type": "number"
+    }
+  },
+  "additionalProperties": true
+}
+

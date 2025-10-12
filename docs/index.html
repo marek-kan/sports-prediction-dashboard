@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NBA/NHL Dashboard</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="navbar">
+    <a href="index.html">Dashboard</a>
+    <a href="about.html">About</a>
+  </div>
+
+  <header class="container">
+    <h1>NBA/NHL Predictions</h1>
+    <p class="subtitle">Full-time and handicap probabilities are from home team perspective.</p>
+    <p class="subtitle">Baseline accuracy means: always pick home to win and cover the hcp, and always pick over in totals.</p>
+    <p class="subtitle"><b>Probabilistic forecasts</b> for the next day's games, engineered for disciplined decision-making and production reliability. Not a betting advice.</p>
+  </header>
+
+  <main class="container">
+
+  <div class="toolbar" style="margin-top:12px">
+    <label>League:</label>
+    <select id="league-select">
+      <option value="nba">NBA</option>
+      <option value="nhl">NHL</option>
+    </select>
+  </div>
+
+    <section id="highlights">
+      <div class="cards">
+        <div class="card">
+          <div class="card-kpi" id="kpi-n"></div>
+          <div class="card-label">Games with outcomes</div>
+        </div>
+        <div class="card">
+          <div class="card-kpi" id="kpi-ft-acc"></div>
+          <div class="card-label" id="kpi-ft-acc-text"></div>
+        </div>
+        <div class="card">
+          <div class="card-kpi" id="kpi-hcp-acc"></div>
+          <div class="card-label" id="kpi-hcp-acc-text"></div>
+        </div>
+        <div class="card">
+          <div class="card-kpi" id="kpi-ou-acc"></div>
+          <div class="card-label" id="kpi-ou-acc-text"></div>
+        </div>
+      </div>
+      <p class="note">
+        These KPIs use a simple 0.5 probability threshold. For calibration and proper scoring
+        (Brier, LogLoss, AUC) see the evaluation notebook:
+        <a href="https://www.github.com/repo-address/eval_notebook" target="_blank" rel="noopener">full report</a>.
+      </p>
+    </section>
+
+    <section id="upcoming">
+      <h2>Upcoming Predictions</h2>
+      <div class="toolbar">
+        <input id="team-filter" placeholder="Filter by team (e.g., BOS, LAL, UTA)" />
+      </div>
+      <div class="table-wrapper">
+        <table id="predictions-table">
+          <thead>
+            <tr>
+              <th>Date (UTC)</th>
+              <th>Home</th>
+              <th>Away</th>
+              <th>Prediction FT</th>
+              <th>Prediction HCP</th>
+              <th>Prediction over</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="results">
+      <h2>Recent Results</h2>
+      <div class="table-wrapper"> 
+        <table id="results-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Home</th>
+              <th>Away</th>
+              <th>Prediction FT</th>
+              <th>Prediction HCP</th>
+              <th>Prediction over</th>
+              <th>Score</th>
+              <th>Outcome (FT / HCP / Totals)</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="container footer">
+    <small>© <span id="year"></span>Not betting advice.</small>
+  </footer>
+
+  <script src="assets/app.js"></script>
+  <script src="assets/navbar.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,145 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "NBA Prediction",
+  "type": "object",
+  "required": [
+    "match_id",
+    "start_time_utc",
+    "home_team",
+    "away_team",
+    "preds"
+  ],
+  "properties": {
+    "match_id": {
+      "type": "string"
+    },
+    "start_time_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "home_team": {
+      "type": "string"
+    },
+    "away_team": {
+      "type": "string"
+    },
+    "preds": {
+      "type": "object",
+      "required": [
+        "ft", "ou", "hcp", "mu", "std"
+      ],
+      "properties": {
+        "rt": {
+          "type": "object",
+          "properties": {
+            "home": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "draw": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "away": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        "ft": {
+          "type": "object",
+          "required": [
+            "home",
+            "away"
+          ],
+          "properties": {
+            "home": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "away": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        "mu": {
+          "type": "object",
+          "properties": {
+            "home": {
+              "type": "number"
+            },
+            "away": {
+              "type": "number"
+            }
+          },
+          "additionalProperties": false
+        },
+        "std": {
+          "type": "object",
+          "properties": {
+            "home": {
+              "type": "number"
+            },
+            "away": {
+              "type": "number"
+            }
+          },
+          "additionalProperties": false
+        },
+        "hcp": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "hcp",
+              "prob"
+            ],
+            "properties": {
+              "hcp": {
+                "type": "number"
+              },
+              "prob": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "ou": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "points",
+              "prob"
+            ],
+            "properties": {
+              "points": {
+                "type": "number"
+              },
+              "prob": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}
+

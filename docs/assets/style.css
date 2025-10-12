@@ -1,0 +1,246 @@
+:root {
+    --fg: #111;
+    --muted: #666;
+    --bg: #fff;
+    --card: #f7f7f9;
+    --border: #e6e6ef;
+    --accent: #0d6efd;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font: 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial;
+}
+
+.container {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+header h1 {
+    margin: 0;
+    font-weight: 700;
+    font-size: 28px;
+}
+
+.subtitle {
+    color: var(--muted);
+    margin-top: 8px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin: 16px 0;
+}
+
+.card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px;
+}
+
+.card-kpi {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.card-label {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 6px;
+}
+
+h2 {
+    margin-top: 28px;
+    margin-bottom: 8px;
+    font-size: 20px;
+}
+
+.table-wrapper {
+    overflow: auto;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+th,
+td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+    text-align: left;
+    white-space: nowrap;
+}
+
+thead th {
+    background: #fafafc;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.toolbar {
+    display: flex;
+    gap: 12px;
+    margin: 8px 0;
+}
+
+input {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 8px 10px;
+    width: 320px;
+}
+
+.chart-box {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px;
+    margin: 12px 0;
+}
+
+footer.footer {
+    color: var(--muted);
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 520px) {
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    input {
+        width: 100%;
+    }
+}
+
+.badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    font-size: 12px;
+}
+
+.win {
+    color: #156f00;
+}
+
+.loss {
+    color: #a40000;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Navigation bar container */
+.navbar {
+    background-color: #24292e;
+    overflow: hidden;
+    padding-bottom: 8px;
+    padding-left: 8px;
+    position: sticky;
+    top: 0;
+}
+
+/* Navigation links */
+.navbar a {
+    float: left;
+    display: block;
+    color: #f0f0f0;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Hover effect */
+.navbar a:hover {
+    background-color: #0366d6;
+    color: white;
+}
+
+/* Active link styling */
+.navbar a.active {
+    background-color: #444c56;
+    color: #ffffff;
+}
+
+/* Label */
+.toolbar label {
+  font-weight: bold;
+  color: #333;
+}
+
+/* Dropdown styling */
+.toolbar select {
+  padding: 6px 12px;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  background-color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* Hover and focus states */
+.toolbar select:hover {
+  border-color: #0366d6;
+}
+
+.toolbar select:focus {
+  border-color: #0366d6;
+  outline: none;
+  box-shadow: 0 0 4px rgba(3,102,214,0.4);
+}

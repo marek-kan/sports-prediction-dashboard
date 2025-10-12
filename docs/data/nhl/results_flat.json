@@ -1,0 +1,508 @@
+[
+  {
+    "filename": "2025-10-12_SEA_VGK.json",
+    "match_id": "2025020037",
+    "start_time_utc": "2025-10-12T02:00:00",
+    "home_team": "Seattle Kraken",
+    "away_team": "Vegas Golden Knights",
+    "home_code": "SEA",
+    "away_code": "VGK",
+    "ft_home": 0.4295,
+    "over": [
+      6.5,
+      0.4842
+    ],
+    "hcp": [
+      -1.5,
+      0.2095
+    ],
+    "mu_home": 2.9423,
+    "mu_away": 3.4415,
+    "home_score": 2,
+    "away_score": 1
+  },
+  {
+    "filename": "2025-10-12_EDM_VAN.json",
+    "match_id": "2025020035",
+    "start_time_utc": "2025-10-12T02:00:00",
+    "home_team": "Edmonton Oilers",
+    "away_team": "Vancouver Canucks",
+    "home_code": "EDM",
+    "away_code": "VAN",
+    "ft_home": 0.5885,
+    "over": [
+      6.5,
+      0.486
+    ],
+    "hcp": [
+      -1.5,
+      0.3457
+    ],
+    "mu_home": 3.4662,
+    "mu_away": 2.9313,
+    "home_score": 3,
+    "away_score": 1
+  },
+  {
+    "filename": "2025-10-10_WPG_DAL.json",
+    "match_id": "2025020017",
+    "start_time_utc": "2025-10-10T00:00:00",
+    "home_team": "Winnipeg Jets",
+    "away_team": "Dallas Stars",
+    "home_code": "WPG",
+    "away_code": "DAL",
+    "ft_home": 0.5799,
+    "over": [
+      6.5,
+      0.3964
+    ],
+    "hcp": [
+      -1.5,
+      0.3241
+    ],
+    "mu_home": 3.0894,
+    "mu_away": 2.6378,
+    "home_score": 4,
+    "away_score": 5
+  },
+  {
+    "filename": "2025-10-12_MIN_CBJ.json",
+    "match_id": "2025020033",
+    "start_time_utc": "2025-10-12T00:00:00",
+    "home_team": "Minnesota Wild",
+    "away_team": "Columbus Blue Jackets",
+    "home_code": "MIN",
+    "away_code": "CBJ",
+    "ft_home": 0.5308,
+    "over": [
+      6.5,
+      0.4386
+    ],
+    "hcp": [
+      -1.5,
+      0.2862
+    ],
+    "mu_home": 3.1008,
+    "mu_away": 2.9485,
+    "home_score": 4,
+    "away_score": 7
+  },
+  {
+    "filename": "2025-10-10_STL_MIN.json",
+    "match_id": "2025020015",
+    "start_time_utc": "2025-10-10T00:00:00",
+    "home_team": "St. Louis Blues",
+    "away_team": "Minnesota Wild",
+    "home_code": "STL",
+    "away_code": "MIN",
+    "ft_home": 0.5626,
+    "over": [
+      6.5,
+      0.4424
+    ],
+    "hcp": [
+      -1.5,
+      0.3152
+    ],
+    "mu_home": 3.2153,
+    "mu_away": 2.8607,
+    "home_score": 0,
+    "away_score": 5
+  },
+  {
+    "filename": "2025-10-11_PIT_NYR.json",
+    "match_id": "2025020029",
+    "start_time_utc": "2025-10-11T23:00:00",
+    "home_team": "Pittsburgh Penguins",
+    "away_team": "New York Rangers",
+    "home_code": "PIT",
+    "away_code": "NYR",
+    "ft_home": 0.4562,
+    "over": [
+      6.5,
+      0.5032
+    ],
+    "hcp": [
+      -1.5,
+      0.2322
+    ],
+    "mu_home": 3.0973,
+    "mu_away": 3.4258,
+    "home_score": 1,
+    "away_score": 6
+  },
+  {
+    "filename": "2025-10-12_COL_DAL.json",
+    "match_id": "2025020034",
+    "start_time_utc": "2025-10-12T01:00:00",
+    "home_team": "Colorado Avalanche",
+    "away_team": "Dallas Stars",
+    "home_code": "COL",
+    "away_code": "DAL",
+    "ft_home": 0.6203,
+    "over": [
+      6.5,
+      0.4077
+    ],
+    "hcp": [
+      -1.5,
+      0.3651
+    ],
+    "mu_home": 3.2642,
+    "mu_away": 2.552,
+    "home_score": 4,
+    "away_score": 5
+  },
+  {
+    "filename": "2025-10-11_DET_TOR.json",
+    "match_id": "2025020025",
+    "start_time_utc": "2025-10-11T23:00:00",
+    "home_team": "Detroit Red Wings",
+    "away_team": "Toronto Maple Leafs",
+    "home_code": "DET",
+    "away_code": "TOR",
+    "ft_home": 0.4567,
+    "over": [
+      6.5,
+      0.3952
+    ],
+    "hcp": [
+      -1.5,
+      0.2193
+    ],
+    "mu_home": 2.7071,
+    "mu_away": 3.0149,
+    "home_score": 6,
+    "away_score": 3
+  },
+  {
+    "filename": "2025-10-10_VAN_CGY.json",
+    "match_id": "2025020019",
+    "start_time_utc": "2025-10-10T02:00:00",
+    "home_team": "Vancouver Canucks",
+    "away_team": "Calgary Flames",
+    "home_code": "VAN",
+    "away_code": "CGY",
+    "ft_home": 0.7729,
+    "over": [
+      6.5,
+      0.4801
+    ],
+    "hcp": [
+      -1.5,
+      0.5506
+    ],
+    "mu_home": 4.1088,
+    "mu_away": 2.2448,
+    "home_score": 5,
+    "away_score": 1
+  },
+  {
+    "filename": "2025-10-11_WPG_LAK.json",
+    "match_id": "2025020022",
+    "start_time_utc": "2025-10-11T17:30:00",
+    "home_team": "Winnipeg Jets",
+    "away_team": "Los Angeles Kings",
+    "home_code": "WPG",
+    "away_code": "LAK",
+    "ft_home": 0.4396,
+    "over": [
+      6.5,
+      0.4052
+    ],
+    "hcp": [
+      -1.5,
+      0.2076
+    ],
+    "mu_home": 2.6906,
+    "mu_away": 3.1067,
+    "home_score": 3,
+    "away_score": 2
+  },
+  {
+    "filename": "2025-10-12_SJS_ANA.json",
+    "match_id": "2025020036",
+    "start_time_utc": "2025-10-12T02:00:00",
+    "home_team": "San Jose Sharks",
+    "away_team": "Anaheim Ducks",
+    "home_code": "SJS",
+    "away_code": "ANA",
+    "ft_home": 0.5078,
+    "over": [
+      6.5,
+      0.5784
+    ],
+    "hcp": [
+      -1.5,
+      0.2835
+    ],
+    "mu_home": 3.5454,
+    "mu_away": 3.5337,
+    "home_score": 6,
+    "away_score": 7
+  },
+  {
+    "filename": "2025-10-11_CGY_STL.json",
+    "match_id": "2025020023",
+    "start_time_utc": "2025-10-11T20:00:00",
+    "home_team": "Calgary Flames",
+    "away_team": "St. Louis Blues",
+    "home_code": "CGY",
+    "away_code": "STL",
+    "ft_home": 0.4425,
+    "over": [
+      6.5,
+      0.3968
+    ],
+    "hcp": [
+      -1.5,
+      0.2087
+    ],
+    "mu_home": 2.669,
+    "mu_away": 3.0648,
+    "home_score": 2,
+    "away_score": 4
+  },
+  {
+    "filename": "2025-10-11_CHI_MTL.json",
+    "match_id": "2025020031",
+    "start_time_utc": "2025-10-11T23:00:00",
+    "home_team": "Chicago Blackhawks",
+    "away_team": "Montr\u00e9al Canadiens",
+    "home_code": "CHI",
+    "away_code": "MTL",
+    "ft_home": 0.3652,
+    "over": [
+      6.5,
+      0.4206
+    ],
+    "hcp": [
+      -1.5,
+      0.1568
+    ],
+    "mu_home": 2.5096,
+    "mu_away": 3.4059,
+    "home_score": 2,
+    "away_score": 3
+  },
+  {
+    "filename": "2025-10-11_NYI_WSH.json",
+    "match_id": "2025020028",
+    "start_time_utc": "2025-10-11T23:00:00",
+    "home_team": "New York Islanders",
+    "away_team": "Washington Capitals",
+    "home_code": "NYI",
+    "away_code": "WSH",
+    "ft_home": 0.4571,
+    "over": [
+      6.5,
+      0.5317
+    ],
+    "hcp": [
+      -1.5,
+      0.2361
+    ],
+    "mu_home": 3.2031,
+    "mu_away": 3.5298,
+    "home_score": 2,
+    "away_score": 4
+  },
+  {
+    "filename": "2025-10-11_TBL_NJD.json",
+    "match_id": "2025020026",
+    "start_time_utc": "2025-10-11T23:00:00",
+    "home_team": "Tampa Bay Lightning",
+    "away_team": "New Jersey Devils",
+    "home_code": "TBL",
+    "away_code": "NJD",
+    "ft_home": 0.5906,
+    "over": [
+      6.5,
+      0.4812
+    ],
+    "hcp": [
+      -1.5,
+      0.3471
+    ],
+    "mu_home": 3.4549,
+    "mu_away": 2.9075,
+    "home_score": 3,
+    "away_score": 5
+  },
+  {
+    "filename": "2025-10-10_SJS_VGK.json",
+    "match_id": "2025020020",
+    "start_time_utc": "2025-10-10T02:00:00",
+    "home_team": "San Jose Sharks",
+    "away_team": "Vegas Golden Knights",
+    "home_code": "SJS",
+    "away_code": "VGK",
+    "ft_home": 0.4894,
+    "over": [
+      6.5,
+      0.4023
+    ],
+    "hcp": [
+      -1.5,
+      0.2461
+    ],
+    "mu_home": 2.8334,
+    "mu_away": 2.9409,
+    "home_score": 3,
+    "away_score": 4
+  },
+  {
+    "filename": "2025-10-12_NSH_UTA.json",
+    "match_id": "2025020032",
+    "start_time_utc": "2025-10-12T00:00:00",
+    "home_team": "Nashville Predators",
+    "away_team": "Utah Mammoth",
+    "home_code": "NSH",
+    "away_code": "UTA",
+    "ft_home": 0.4661,
+    "over": [
+      6.5,
+      0.4298
+    ],
+    "hcp": [
+      -1.5,
+      0.2312
+    ],
+    "mu_home": 2.8639,
+    "mu_away": 3.1183,
+    "home_score": 2,
+    "away_score": 3
+  },
+  {
+    "filename": "2025-10-10_SEA_ANA.json",
+    "match_id": "2025020021",
+    "start_time_utc": "2025-10-10T02:00:00",
+    "home_team": "Seattle Kraken",
+    "away_team": "Anaheim Ducks",
+    "home_code": "SEA",
+    "away_code": "ANA",
+    "ft_home": 0.5373,
+    "over": [
+      6.5,
+      0.5364
+    ],
+    "hcp": [
+      -1.5,
+      0.3046
+    ],
+    "mu_home": 3.4874,
+    "mu_away": 3.281,
+    "home_score": 3,
+    "away_score": 1
+  },
+  {
+    "filename": "2025-10-11_BOS_BUF.json",
+    "match_id": "2025020024",
+    "start_time_utc": "2025-10-11T23:00:00",
+    "home_team": "Boston Bruins",
+    "away_team": "Buffalo Sabres",
+    "home_code": "BOS",
+    "away_code": "BUF",
+    "ft_home": 0.5314,
+    "over": [
+      6.5,
+      0.4744
+    ],
+    "hcp": [
+      -1.5,
+      0.2916
+    ],
+    "mu_home": 3.2366,
+    "mu_away": 3.0762,
+    "home_score": 3,
+    "away_score": 1
+  },
+  {
+    "filename": "2025-10-11_FLA_OTT.json",
+    "match_id": "2025020027",
+    "start_time_utc": "2025-10-11T23:00:00",
+    "home_team": "Florida Panthers",
+    "away_team": "Ottawa Senators",
+    "home_code": "FLA",
+    "away_code": "OTT",
+    "ft_home": 0.5731,
+    "over": [
+      6.5,
+      0.3895
+    ],
+    "hcp": [
+      -1.5,
+      0.3167
+    ],
+    "mu_home": 3.0429,
+    "mu_away": 2.6358,
+    "home_score": 6,
+    "away_score": 2
+  },
+  {
+    "filename": "2025-10-11_CAR_PHI.json",
+    "match_id": "2025020030",
+    "start_time_utc": "2025-10-11T23:00:00",
+    "home_team": "Carolina Hurricanes",
+    "away_team": "Philadelphia Flyers",
+    "home_code": "CAR",
+    "away_code": "PHI",
+    "ft_home": 0.6233,
+    "over": [
+      6.5,
+      0.3804
+    ],
+    "hcp": [
+      -1.5,
+      0.3635
+    ],
+    "mu_home": 3.1651,
+    "mu_away": 2.4468,
+    "home_score": 4,
+    "away_score": 3
+  },
+  {
+    "filename": "2025-10-10_NSH_CBJ.json",
+    "match_id": "2025020016",
+    "start_time_utc": "2025-10-10T00:00:00",
+    "home_team": "Nashville Predators",
+    "away_team": "Columbus Blue Jackets",
+    "home_code": "NSH",
+    "away_code": "CBJ",
+    "ft_home": 0.4711,
+    "over": [
+      6.5,
+      0.5494
+    ],
+    "hcp": [
+      -1.5,
+      0.2494
+    ],
+    "mu_home": 3.3161,
+    "mu_away": 3.5513,
+    "home_score": 2,
+    "away_score": 1
+  },
+  {
+    "filename": "2025-10-10_COL_UTA.json",
+    "match_id": "2025020018",
+    "start_time_utc": "2025-10-10T01:00:00",
+    "home_team": "Colorado Avalanche",
+    "away_team": "Utah Mammoth",
+    "home_code": "COL",
+    "away_code": "UTA",
+    "ft_home": 0.561,
+    "over": [
+      6.5,
+      0.3154
+    ],
+    "hcp": [
+      -1.5,
+      0.2918
+    ],
+    "mu_home": 2.6968,
+    "mu_away": 2.384,
+    "home_score": 2,
+    "away_score": 1
+  }
+]

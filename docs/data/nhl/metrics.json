@@ -1,0 +1,10 @@
+{
+  "updated_at": "2025-10-12T11:03:15+00:00Z",
+  "n": 23,
+  "ft_accuracy": 0.5652173913043478,
+  "ft_accuracy_baseline": 0.4782608695652174,
+  "over_accuracy": 0.5217391304347826,
+  "over_accuracy_baseline": 0.43478260869565216,
+  "hcp_accuracy": 0.782608695652174,
+  "hcp_accuracy_baseline": 0.7391304347826086
+}

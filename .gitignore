@@ -1,0 +1,90 @@
+# -----------------------
+# Python
+# -----------------------
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Build / packaging
+build/
+dist/
+.eggs/
+*.egg-info/
+*.egg
+pip-wheel-metadata/
+
+# Virtual envs
+.venv/
+venv/
+env/
+ENV/
+.conda/
+.python-version
+
+# Tests / coverage
+.pytest_cache/
+.tox/
+.nox/
+.coverage*
+htmlcov/
+
+# Notebooks
+*.ipynb_checkpoints
+
+# -----------------------
+# Editors / IDEs
+# -----------------------
+.vscode/
+.idea/
+*.code-workspace
+
+# -----------------------
+# OS junk
+# -----------------------
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+__MACOSX/
+
+# -----------------------
+# Logs / temp
+# -----------------------
+*.log
+logs/
+*.tmp
+*.bak
+*.swp
+*.swo
+*.txt
+!requirements.txt
+
+# -----------------------
+# JavaScript / tooling (if added later)
+# -----------------------
+node_modules/
+npm-debug.log*
+yarn-error.log
+.pnpm-store/
+.eslintcache
+.parcel-cache/
+.cache/
+
+# -----------------------
+# Project-specific (generated at build time)
+# These are produced by scripts/compute_metrics.py or CI.
+# Keep raw per-game JSONs under docs/data/predictions and docs/data/results tracked.
+# Comment out these lines if you prefer committing generated artifacts.
+# -----------------------
+docs/data/metrics.json
+docs/data/predictions_flat.json
+docs/data/results_flat.json
+docs/data/manifest.json
+
+# -----------------------
+# Archives
+# -----------------------
+*.zip
+*.tar
+*.tar.gz
+*.7z
