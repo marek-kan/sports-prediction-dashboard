@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>NBA/NHL Dashboard</title>
+  <title>NBA, NHL Dashboard</title>
   <link rel="stylesheet" href="assets/style.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
@@ -14,10 +14,17 @@
   </div>
 
   <header class="container">
-    <h1>NBA/NHL Predictions</h1>
-    <p class="subtitle">Full-time and handicap probabilities are from home team perspective.</p>
-    <p class="subtitle">Baseline accuracy means: always pick home to win and cover the hcp, and always pick over in totals.</p>
-    <p class="subtitle"><b>Probabilistic forecasts</b> for the next day's games, engineered for disciplined decision-making and production reliability. Not a betting advice.</p>
+    <h1>NBA, NHL Predictions</h1>
+    <p class="subtitle">Full-time, handicap probabilities in the tables are from home team perspective.</p>
+    <p class="subtitle">Total score line probabilities in the tables are from over the line perspective.</p>
+    <p class="subtitle">Baseline accuracy means:
+      <ul class="subtitle">
+        <li>Always pick home to win</li>
+        <li>Always home to cover the hcp (NBA) or always away to cover hcp (NHL)</li>
+        <li>Always pick over in totals.</li>
+      </ul>
+    </p>
+    <p class="subtitle"><b>This is not a betting advice.</b></p>
   </header>
 
   <main class="container">
@@ -52,7 +59,7 @@
       <p class="note">
         These KPIs use a simple 0.5 probability threshold. For calibration and proper scoring
         (Brier, LogLoss, AUC) see the evaluation notebook:
-        <a href="https://www.github.com/repo-address/eval_notebook" target="_blank" rel="noopener">full report</a>.
+        <a href="https://www.github.com/marek-kan/public-prediction-dashboard/notebooks/eval_calibration.ipynb" target="_blank" rel="noopener">full report</a>.
       </p>
     </section>
 
@@ -104,7 +111,7 @@
   </main>
 
   <footer class="container footer">
-    <small>© <span id="year"></span>Not betting advice.</small>
+    <small>© <span id="year"></span> Not a betting advice.</small>
   </footer>
 
   <script src="assets/app.js"></script>
