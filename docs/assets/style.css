@@ -244,3 +244,28 @@ a:hover {
   outline: none;
   box-shadow: 0 0 4px rgba(3,102,214,0.4);
 }
+
+.pager {
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+  justify-content: flex-end;
+  margin: .5rem 0;
+}
+.pager-status { opacity: .8; }
+.pager button {
+  appearance: none;
+  border: 1px solid #0a58ca;
+  background: linear-gradient(to bottom, var(--accent), #0a58ca);
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+  filter: brightness(0.9);
+}
+
+.pager button:hover { filter: brightness(1.0); }
+.pager button:disabled { opacity: .5; cursor: not-allowed; }
+.pager button:focus-visible { outline: 2px solid rgba(13,110,253,.4); outline-offset: 2px; }
