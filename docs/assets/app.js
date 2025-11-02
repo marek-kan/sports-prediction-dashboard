@@ -13,13 +13,14 @@
     return Math.max(0, Math.min(1, y));
   };
 
-
   const state = {
     league: "nba",
     preds: [],
     results: [],
     metrics: null,
-    charts: { calib: null, trend: null }
+    charts: { calib: null, trend: null },
+    resultsPageSize: 10,
+    resultsPage: 1
   };
 
   async function loadJSON(path) {
@@ -46,7 +47,6 @@
     const teamFilter = (el("#team-filter")?.value || "").trim().toUpperCase();
 
     rows
-      // .filter(r => r.start_time_utc && new Date(r.start_time_utc) > now)
       .filter(r =>
         !teamFilter ||
         (r.home_code || "").toUpperCase().includes(teamFilter) ||
@@ -75,25 +75,90 @@
       });
   }
 
+  function elAll(selector) {
+    return Array.from(document.querySelectorAll(selector));
+  }
+  function processResults(rows) {
+    const now = new Date();
+    // completed games only, newest first
+    return (rows || [])
+      .filter(r => r.start_time_utc && new Date(r.start_time_utc) <= now)
+      .sort((a, b) => new Date(b.start_time_utc) - new Date(a.start_time_utc));
+  }
+
+  function clamp(val, min, max) {
+    return Math.max(min, Math.min(max, val));
+  }
+  function renderResultsPagination(total, page, pageSize) {
+    const containerIds = ["#results-pagination",];
+    const pageCount = Math.max(1, Math.ceil(total / pageSize));
+
+    const html = `
+      <div class="pager">
+        <button type="button" data-nav="first" ${page <= 1 ? "disabled" : ""}>⏮︎ First</button>
+        <button type="button" data-nav="prev"  ${page <= 1 ? "disabled" : ""}>◀︎ Prev</button>
+        <span class="pager-status">Page ${page} of ${pageCount} • ${total} results</span>
+        <button type="button" data-nav="next"  ${page >= pageCount ? "disabled" : ""}>Next ▶︎</button>
+        <button type="button" data-nav="last"  ${page >= pageCount ? "disabled" : ""}>Last ⏭︎</button>
+      </div>
+    `;
+
+    elAll(containerIds.join(",")).forEach(c => {
+      if (!c) return;
+      c.innerHTML = html;
+
+      const onClick = (nav) => {
+        const newPage = ({
+          first: 1,
+          prev:  Math.max(1, page - 1),
+          next:  Math.min(pageCount, page + 1),
+          last:  pageCount
+        })[nav] ?? page;
+
+        if (newPage !== page) {
+          state.resultsPage = newPage;
+          renderResults(state.results); // re-render current page
+        }
+      };
+
+      c.querySelectorAll("[data-nav]").forEach(btn => {
+        btn.addEventListener("click", () => onClick(btn.getAttribute("data-nav")));
+      });
+    });
+  }
+
 
   function renderResults(rows) {
+    const processed = processResults(rows);
+    const pageSize = state.resultsPageSize || 20;
+    const pageCount = Math.max(1, Math.ceil(processed.length / pageSize));
+    state.resultsPage = clamp(state.resultsPage || 1, 1, pageCount);
+
+    const startIdx = (state.resultsPage - 1) * pageSize;
+    const endIdx   = startIdx + pageSize;
+    const pageRows = processed.slice(startIdx, endIdx);
+
     const tbody = el("#results-table tbody");
     if (!tbody) return;
     tbody.innerHTML = "";
+
     const now = new Date();
 
     const grade = (predProb, realized, posWord, negWord) => {
-      if (!realized || realized === "-" || realized === "Push") return realized === "Push" ? "push" : "neutral";
+      if (!realized || realized === "-" || realized === "Push") {
+        return realized === "Push" ? "push" : "neutral";
+      }
       if (predProb === null) return "neutral";
       const predicted = predProb >= 0.5 ? posWord : negWord;
       return realized === predicted ? "win" : "loss";
     };
 
-    rows
-      .filter(r => r.start_time_utc && new Date(r.start_time_utc) <= now)
-      .sort((a, b) => new Date(b.start_time_utc) - new Date(a.start_time_utc))
-      .slice(0, 200)
-      .forEach(r => {
+    if (pageRows.length === 0) {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `<td colspan="9" style="text-align:center; opacity:.8;">No completed games to show.</td>`;
+      tbody.appendChild(tr);
+    } else {
+      pageRows.forEach(r => {
         const tr = document.createElement("tr");
 
         const id = (r.filename || "").replace(".json", "");
@@ -159,8 +224,10 @@
         `;
 
         tbody.appendChild(tr);
-      }
-    );
+      });
+    }
+
+    renderResultsPagination(processed.length, state.resultsPage, pageSize);
   }
 
   function renderCalibChart(bins) {
@@ -243,6 +310,7 @@
       state.metrics = metrics;
       state.preds   = preds || [];
       state.results = results || [];
+      state.resultsPage = 1;
 
       renderKPIs(state.metrics);
       renderPredictions(state.preds);
