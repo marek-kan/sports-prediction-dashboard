@@ -13,7 +13,7 @@ OVER_LINES = {
     "nhl": 6.5
 }
 HCP_LINES = {
-    "nba": -5.5,
+    "nba": 5.5,
     "nhl": -1.5
 }
 
