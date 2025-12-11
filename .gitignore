@@ -91,3 +91,4 @@ docs/data/manifest.json
 *.tar
 *.tar.gz
 *.7z
+*.parquet
