@@ -31,6 +31,7 @@ pyproject.toml
 htmlcov/
 
 # Notebooks
+notebooks/
 *.ipynb_checkpoints
 
 # -----------------------
@@ -90,3 +91,4 @@ docs/data/manifest.json
 *.tar
 *.tar.gz
 *.7z
+*.parquet
