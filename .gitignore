@@ -32,6 +32,7 @@ htmlcov/
 
 # Notebooks
 notebooks/
+!notebooks/eval_calibration.ipynb
 *.ipynb_checkpoints
 
 # -----------------------
